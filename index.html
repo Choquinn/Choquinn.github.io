@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Paulo H. | Portifólio</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="particulas"></div>
+        <nav class="navegacao">
+            <ul class="menu">
+                <li>
+                    <a href="#inicio" class="menu-link">Início</a>
+                </li>
+                <li>
+                    <a href="#sobre" class="menu-link">Sobre</a>
+                </li>
+                <li>
+                    <a href="#projetos" class="menu-link">Projetos</a>
+                </li>
+                <li>
+                    <a href="#contato" class="menu-link">Contato</a>
+                </li>
+            </ul>
+        </nav>
+        <main id="inicio" class="cabecalho">
+            <img src="images/profile.jpg" alt="Foto de Paulo Henrique" class="foto-perfil">
+            <h1>Paulo Henrique</h1>
+            <p class="cabecalho-sub">Desenvolvedor Java e Backend</p>
+        </main>
+        <section id="sobre" class="sobre">
+            <h2 class="sobre-titulo">Sobre mim</h2>
+            <div class="sobre-caixa">
+                <p class="sobre-paragrafo">
+                    Sou apaixonado por transformar ideias em soluções digitais, combinando criatividade e lógica para criar experiências únicas e funcionais. Sempre em busca de aprender e evoluir, meu trabalho reflete minha dedicação à inovação e à excelência.
+                </p>
+            </div>
+        </section>
+        <section id="projetos" class="projetos">
+            <h2 class="projetos-titulo">Meus Projetos</h2>
+            <div class="projetos-caixa">
+                <div class="projetos-card">
+                    <img src="images/LandingPage.png" alt="Projeto Landing Page" class="projetos-imagem">
+                    <div class="caixa-textos">
+                        <h3 class="info-projetos">Landing Page</h3>
+                        <p class="paragrafo-projetos">Desenvolvi uma landing page responsiva e moderna com o objetivo de divulgar um serviço de landing pages. O projeto foi criado para demonstrar minhas habilidades em desenvolvimento back-end, design intuitivo e otimização para conversões.</p>
+                    </div>    
+                </div>
+                <div class="projetos-card">
+                    <img src="images/ControleFinanceiro.png" alt="Projeto Controle Financeiro" class="projetos-imagem">
+                    <div class="caixa-textos">
+                        <h3 class="info-projetos">Controle Financeiro</h3>
+                        <p class="paragrafo-projetos">Aplicação backend para gerenciamento financeiro pessoal, permitindo cadastro de receitas, despesas, categorização e relatórios. Desenvolvido para praticar conceitos de Spring Boot, segurança e modelagem de banco de dados.</p>
+                    </div>
+                </div>
+                <div class="projetos-card">
+                    <img src="images/ListadeAfazeres.png" alt="Projeto Lista de Afazeres" class="projetos-imagem">
+                    <div class="caixa-textos">
+                        <h3 class="info-projetos">Lista de Afazeres</h3>
+                        <p class="paragrafo-projetos">API RESTful para gerenciamento de tarefas diárias, com priorização, prazos e notificações. Projeto focado em simplicidade e eficiência, utilizando arquitetura em camadas.</p>
+                    </div>
+                </div>
+                <div class="projetos-card">
+                    <img src="images/APIdeCatalogo.png" alt="Projeto API de Catálogo" class="projetos-imagem">
+                    <div class="caixa-textos">
+                        <h3 class="info-projetos">API de Catálogo</h3>
+                        <p class="paragrafo-projetos">Sistema de catálogo para e-commerce, com cadastro de produtos, categorias, busca filtrada e upload de imagens. Projeto completo com foco em escalabilidade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contatos" class="contatos">
+            <h2 class="contatos-titulo">Entre em Contato</h2>
+            <form class="formulario-contato" id="formulario" onsubmit="enviarWhatsapp(event)">
+                <div class="grupo-form">
+                    <input placeholder="Nome" class="campo-form" id="nome">
+                </div>
+                <div class="grupo-form">
+                    <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="4" id="mensagem"></textarea>
+                </div>
+                <button type="submit" class="botao-form">Enviar Whatsapp</button>
+            </form>
+        </section>
+        <script>
+            function enviarWhatsapp(event) { 
+                event.preventDefault();
+
+                const nome = document.getElementById('nome').value;
+                const mensagem = document.getElementById('mensagem').value;
+                const telefone = '5588993469953';
+
+                const texto = `Olá, me chamo ${nome}, ${mensagem}`;
+                const msgFor = encodeURIComponent(texto);
+
+                const url = `https://wa.me/${telefone}?text=${msgFor}`;
+
+                window.open(url, '_blank');
+            }
+        </script>
+    </body>
+</html>
